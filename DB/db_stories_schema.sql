@@ -30,7 +30,7 @@ category_id int not null
 create table sections (
 section_id int auto_increment not null primary key,
 section_title varchar(100) not null,
-section_content varchar(3000) not null,
+section_content varchar(1000) not null,
 section_image_name varchar(250),
 section_image_format varchar(5),
 section_image_path varchar(250),

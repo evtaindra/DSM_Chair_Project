@@ -42,6 +42,4 @@
 
     header('Content-Type: application/json');
     echo json_encode($categories);
-
-    $connection->close();
 ?>
