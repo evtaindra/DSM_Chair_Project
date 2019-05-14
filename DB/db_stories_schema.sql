@@ -22,6 +22,7 @@ story_image_name varchar(250),
 story_image_format varchar(5),
 story_image_path varchar(250),
 story_description varchar(200),
+story_approved boolean not null,
 user_id int not null,
 category_id int not null
 ) engine = innodb;
