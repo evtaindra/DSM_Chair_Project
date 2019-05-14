@@ -39,12 +39,12 @@ story_id int not null
 
 alter table stories
 add constraint fk_stories_users
-foreign key (user_id) references users(user_id);
+foreign key (user_id) references users(user_id) on delete cascade;
 
 alter table stories
 add constraint fk_stories_categories
-foreign key (category_id) references categories(category_id);
+foreign key (category_id) references categories(category_id) on delete cascade;
 
 alter table sections
 add constraint fk_sections_stories
-foreign key (story_id) references stories(story_id);
+foreign key (story_id) references stories(story_id) on delete cascade;

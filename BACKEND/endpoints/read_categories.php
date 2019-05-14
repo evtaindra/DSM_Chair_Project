@@ -1,6 +1,6 @@
 <?php
 
-    require_once "../db_connection/connetion.php";
+    require_once "../db_connection/connection.php";
 
     $categories = array();
     //Fabulas, Aventuras, Leyendas, Terror
