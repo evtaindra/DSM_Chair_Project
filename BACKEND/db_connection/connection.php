@@ -1,8 +1,8 @@
 <?php
 
-$link = 'mysql:host=localhost;dbname=db_stories2;charset=utf8';
+$link = 'mysql:host=localhost;dbname=db_stories;charset=utf8';
 $server = 'localhost';
-$db = 'db_stories2';
+$db = 'db_stories';
 $user = 'root';
 $password = '';
 

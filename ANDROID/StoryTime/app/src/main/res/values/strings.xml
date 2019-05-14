@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">StoryTime</string>
+    <string name="welcome_text">Welcome to StoryTime!</string>
+    <string name="welcome_desc">Log In to write and read stories</string>
+    <string name="signup_message">If you do not have an account, you may register</string>
+    <string name="welcome_register">Sign up to write your own stories and share them with StoryTime community</string>
+    <string name="welcome_message">Welcome</string>
+    <string name="signup_success">Congratulations! You are now registered in StoryTime App</string>
+    <string name="user_logout">Session finalized!</string>
+    <string name="category_header">Category</string>
+    <string name="story_author_by">By: </string>
+    <string name="write_stories">Write a story</string>
+
+    <!--Bottom Navigation-->
+    <string name="nav_home">Home</string>
+    <string name="nav_write">Write</string>
+    <string name="nav_profile">Profile</string>
+
+    <!--EditText hints-->
+    <string name="emailHint">Email</string>
+    <string name="passwordHint">Password</string>
+    <string name="nameHint">Name</string>
+    <string name="lastnameHint">Last name</string>
+    <string name="phoneHint">Phone number (Optional)</string>
+    <string name="confirmPasswordHint">Confirm password</string>
+    <string name="story_title">Title</string>
+    <string name="story_description">A little description</string>
+
+    <!--Buttons-->
+    <string name="start_write_button">Start writing</string>
+
+    <!--validations-->
+    <string name="require_email">Email is required</string>
+    <string name="invalid_email">Enter a valid email</string>
+    <string name="require_password">Password is required</string>
+    <string name="require_password_confirmation">You must confirm your password</string>
+    <string name="require_name">Name is required</string>
+    <string name="require_lastname">Last name is required</string>
+    <string name="phone_length">Phone number must have 8 digits</string>
+    <string name="password_length">Password should have at least 6 characters long</string>
+    <string name="password_match">Password does not match</string>
+    <string name="require_title">Title is required</string>
+    <string name="require_description">Please write some little description</string>
+
+
+
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Senectus et netus et malesuada fames ac. Risus viverra adipiscing at in tellus integer feugiat scelerisque. At imperdiet dui accumsan sit amet nulla facilisi. Amet nisl purus in mollis nunc sed. Lectus mauris ultrices eros in cursus turpis massa tincidunt dui. Nullam eget felis eget nunc lobortis mattis aliquam faucibus. Et malesuada fames ac turpis egestas sed tempus urna et. Placerat duis ultricies lacus sed turpis tincidunt. Amet nisl suscipit adipiscing bibendum est ultricies integer. Aliquet risus feugiat in ante metus dictum at tempor commodo. Augue eget arcu dictum varius. Arcu dictum varius duis at consectetur lorem donec. Ac turpis egestas integer eget aliquet nibh. Vulputate ut pharetra sit amet aliquam id diam. Neque ornare aenean euismod elementum nisi. Non sodales neque sodales ut etiam sit. Ac turpis egestas sed tempus urna et pharetra pharetra. Urna et pharetra pharetra massa massa ultricies. Faucibus et molestie ac feugiat sed lectus.
+
+Lorem ipsum dolor sit amet.</string>
+
+
+</resources>
