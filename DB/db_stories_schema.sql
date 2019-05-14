@@ -1,5 +1,5 @@
 create database db_stories character set utf8 collate utf8_bin;
-use stories;
+use db_stories;
 
 create table users (
 user_id int auto_increment not null primary key,
