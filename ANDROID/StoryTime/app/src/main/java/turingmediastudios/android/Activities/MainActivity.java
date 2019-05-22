@@ -22,6 +22,8 @@ import turingmediastudios.android.R;
 
 public class MainActivity extends AppCompatActivity {
 
+    //UPDATED
+
     private BottomNavigationView mBottomNavigationView;
     private FragmentManager mFragmentManager;
 
