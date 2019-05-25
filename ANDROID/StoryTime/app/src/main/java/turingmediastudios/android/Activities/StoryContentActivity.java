@@ -87,7 +87,7 @@ public class StoryContentActivity extends AppCompatActivity {
         setSupportActionBar(mToolbar);
         mToolbar.setTitle(story_title);
         mToolbar.setSubtitle(story_author);
-        mToolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_arrow_back_24px));
+        mToolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_arrow_back_primary_color_24px));
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

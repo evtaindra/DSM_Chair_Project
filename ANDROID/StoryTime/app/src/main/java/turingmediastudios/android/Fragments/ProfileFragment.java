@@ -2,6 +2,7 @@ package turingmediastudios.android.Fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import java.util.List;
 
@@ -24,6 +26,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import turingmediastudios.android.Adapters.StoriesAdapter;
 import turingmediastudios.android.Activities.LogInActivity;
+import turingmediastudios.android.Adapters.UserStoriesAdapter;
 import turingmediastudios.android.Models.SharedPreferencesManager;
 import turingmediastudios.android.Models.Story;
 import turingmediastudios.android.Models.User;
@@ -35,6 +38,7 @@ public class ProfileFragment extends Fragment {
     private ImageView logoutButton;
     private TextView userName;
     private RecyclerView userStoriesRecyclerView;
+    private SwipeRefreshLayout refreshLayout;
 
     //current user
     private User currentUser = SharedPreferencesManager.getInstance(getActivity()).getLoggedUser();
@@ -53,6 +57,15 @@ public class ProfileFragment extends Fragment {
         userName = getActivity().findViewById(R.id.profileUserName);
 
         initUserData();
+
+        refreshLayout = getActivity().findViewById(R.id.refreshUserStories);
+        refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                initUserData();
+                refreshLayout.setRefreshing(false);
+            }
+        });
 
         //logout button listener
         logoutButton = getActivity().findViewById(R.id.logoutButton);
@@ -89,12 +102,12 @@ public class ProfileFragment extends Fragment {
         call.enqueue(new Callback<List<Story>>() {
             @Override
             public void onResponse(Call<List<Story>> call, Response<List<Story>> response) {
-                userStoriesRecyclerView.setAdapter(new StoriesAdapter(response.body(), getActivity()));
+                userStoriesRecyclerView.setAdapter(new UserStoriesAdapter(response.body(), getActivity()));
             }
 
             @Override
             public void onFailure(Call<List<Story>> call, Throwable t) {
-                Toast.makeText(getActivity(), "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                Log.d("debug", "Error: " + t.getMessage());
 
             }
         });

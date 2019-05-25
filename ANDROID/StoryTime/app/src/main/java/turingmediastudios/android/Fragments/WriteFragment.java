@@ -102,6 +102,8 @@ public class WriteFragment extends Fragment {
 
                 if (!storyResponse.isError()) {
                     //story was inserted successfully
+                    writeTitleInput.setText("");
+                    writeDescriptionInput.setText("");
                     Toast.makeText(getActivity(), storyResponse.getMessage() , Toast.LENGTH_LONG).show();
 
                 } else {

@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
@@ -29,6 +30,8 @@ public class LogInActivity extends AppCompatActivity {
     public static LogInActivity logInActivity;
     private EditText loginEmailInput, loginPasswordInput;
 
+    private AdView mAdView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,11 +45,12 @@ public class LogInActivity extends AppCompatActivity {
 
         MobileAds.initialize(this, "ca-app-pub-4805588703731685~7046533858");
 
-        AdView adView = new AdView(this);
-        adView.setAdSize(AdSize.BANNER);
-        adView.setAdUnitId("ca-app-pub-3940256099942544/6300978111");
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
     }
+
 
     @Override
     protected void onStart() {
@@ -111,6 +115,7 @@ public class LogInActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 LoginResponse loginResponse = response.body();
+                Log.d("debug", response.message());
 
                 if (!loginResponse.isError()) {
                     //saving user data in shared preferences
@@ -129,6 +134,7 @@ public class LogInActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<LoginResponse> call, Throwable t) {
+                Toast.makeText(LogInActivity.this, "error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
 
             }
         });

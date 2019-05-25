@@ -2,6 +2,7 @@ package turingmediastudios.android.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,10 +44,8 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.Vi
 
         holder.title.setText(category.getCategory_name());
 
-        //image url
-        String image_url = ApiService.BASE_URL + "/imagenes/category_image_" + category.getCategory_id() + ".jpg";
         Glide.with(context)
-                .load(image_url)
+                .load(Uri.parse("file:///android_asset/category_image_" + category.getCategory_id() + ".jpg"))
                 .into(holder.image);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {

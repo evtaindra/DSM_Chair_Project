@@ -5,11 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.appcompat.widget.Toolbar
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_icon_write"
+        android:padding="16dp"
+        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/hometxt"
         android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
-        app:title="@string/write_stories"
-        app:titleTextColor="@color/colorPrimary"/>
+        android:layout_height="wrap_content"
+        android:text="Escribe"
+        style="@style/TextAppearance.MaterialComponents.Headline3"
+        android:textAlignment="center"/>
 
     <LinearLayout
         android:orientation="vertical"
@@ -21,7 +33,6 @@
             android:id="@+id/writeTitleInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:hint="@string/story_title"
             android:inputType="text"/>
 

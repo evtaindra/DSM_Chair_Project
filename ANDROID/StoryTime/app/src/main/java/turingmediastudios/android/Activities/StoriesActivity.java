@@ -5,11 +5,16 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -29,23 +34,42 @@ public class StoriesActivity extends AppCompatActivity {
     public static StoriesActivity storiesActivity;
     private RecyclerView mRecyclerview;
     private int categoryId;
+    private Category thisCategory;
+    private ImageView categoryImage;
+    private SwipeRefreshLayout swipeRefreshLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stories);
 
-        //first set toolbar options
-        toolbarSetup();
+        categoryImage = findViewById(R.id.categoryStoriesImage);
+        swipeRefreshLayout = findViewById(R.id.refreshStories);
 
         //fetch category
-        Category thisCategory = (Category) getIntent().getSerializableExtra("category_data");
+        thisCategory = (Category) getIntent().getSerializableExtra("category_data");
         categoryId = thisCategory.getCategory_id();
+
+        //get category image
+        Glide.with(this)
+                .load(Uri.parse("file:///android_asset/category_image_" + thisCategory.getCategory_id() + ".jpg"))
+                .into(categoryImage);
+
+        //first set toolbar options
+        toolbarSetup();
 
         //get context
         storiesActivity = this;
 
         initContent();
+
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                initContent();
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        });
 
     }
 
@@ -104,6 +128,7 @@ public class StoriesActivity extends AppCompatActivity {
         //get toolbar
         Toolbar toolbar = findViewById(R.id.storiesToolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle(thisCategory.getCategory_name());
         toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_arrow_back_24px));
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

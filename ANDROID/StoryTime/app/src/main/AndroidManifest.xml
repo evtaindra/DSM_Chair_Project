@@ -3,7 +3,7 @@
     package="turingmediastudios.android">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -13,14 +13,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activities.StoryContentActivity"></activity>
+        <activity android:name=".Activities.EditStoryActivity"
+            android:windowSoftInputMode="stateHidden"></activity>
+        <activity android:name=".Activities.StoryContentActivity" />
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-4805588703731685~7046533858" />
 
         <activity android:name=".Activities.SignUpActivity" />
-        <activity android:name=".Activities.StoriesActivity"></activity>
+        <activity android:name=".Activities.StoriesActivity"/>
         <activity android:name=".Activities.LogInActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

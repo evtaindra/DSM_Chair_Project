@@ -1,6 +1,8 @@
 package turingmediastudios.android.Models;
 
-public class Section {
+import java.io.Serializable;
+
+public class Section implements Serializable {
 
     private int section_id;
     private String section_title;

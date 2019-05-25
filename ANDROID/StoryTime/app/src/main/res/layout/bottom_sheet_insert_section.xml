@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_sheet"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_round_top"
+    android:orientation="vertical"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="80dp"
+    android:padding="16dp"
+    android:elevation="12dp"
+    app:layout_behavior="@string/bottom_sheet_behavior">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/closeBs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_close_24px"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/closeBs"
+            android:layout_marginRight="16dp"
+            android:text="@string/add_section"
+            style="@style/TextAppearance.AppCompat.Title"/>
+
+
+    </RelativeLayout>
+
+
+    <EditText
+        android:id="@+id/insertSectionTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/story_title"
+        android:inputType="text"
+        android:layout_marginTop="16dp"/>
+
+    <EditText
+        android:id="@+id/insertSectionContent"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_marginTop="16dp"
+        android:inputType="text"
+        android:hint="@string/write_section_content"
+        android:gravity="top"
+        android:padding="16dp"
+        android:maxLength="1000"
+        android:background="@drawable/background_round_gray_light"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/insertCompleted"
+        android:background="@drawable/accent_button_background"
+        android:text="ADD"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center"/>
+
+</LinearLayout>

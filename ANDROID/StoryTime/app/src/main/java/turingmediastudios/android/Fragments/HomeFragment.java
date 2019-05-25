@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import java.util.List;
 
@@ -26,6 +27,7 @@ import turingmediastudios.android.R;
 public class HomeFragment extends Fragment {
 
     private RecyclerView categoriesRecyclerview;
+    private SwipeRefreshLayout refreshCategories;
 
     @Nullable
     @Override
@@ -39,13 +41,23 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        refreshCategories = getActivity().findViewById(R.id.refreshCategories);
+
         initRecyclerview();
+
+        refreshCategories.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                initRecyclerview();
+                refreshCategories.setRefreshing(false);
+            }
+        });
 
     }
 
     private void initRecyclerview() {
         categoriesRecyclerview = getActivity().findViewById(R.id.categoriesRecyclerView);
-        categoriesRecyclerview.setLayoutManager(new GridLayoutManager(getActivity(), 1));
+        categoriesRecyclerview.setLayoutManager(new GridLayoutManager(getActivity(), 2));
 
         //retofit
         Retrofit retrofit = new Retrofit.Builder()

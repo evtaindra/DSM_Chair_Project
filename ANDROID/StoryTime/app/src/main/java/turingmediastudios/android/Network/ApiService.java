@@ -10,6 +10,7 @@ import retrofit2.http.POST;
 import retrofit2.http.Query;
 import turingmediastudios.android.Models.Category;
 import turingmediastudios.android.Models.Responses.LoginResponse;
+import turingmediastudios.android.Models.Responses.Response;
 import turingmediastudios.android.Models.Section;
 import turingmediastudios.android.Models.Responses.SignupResponse;
 import turingmediastudios.android.Models.Story;
@@ -17,7 +18,7 @@ import turingmediastudios.android.Models.Responses.StoryResponse;
 
 public interface ApiService {
 
-    String BASE_URL = "http://192.168.1.24:80/BACKEND/";
+    String BASE_URL = "http://192.168.137.11:80/BACKEND/";
 
     @GET("endpoints/read_stories.php?category_id=?")
     Call<List<Story>> getStories(@Query("category_id") int id);
@@ -55,5 +56,11 @@ public interface ApiService {
 
     @GET("endpoints/read_sections.php?story_id=?")
     Call<List<Section>> getSections(@Query("story_id") int id);
+
+    @FormUrlEncoded
+    @POST("endpoints/insert_section.php")
+    Call<Response> insertSection(@Field("section_title") String title,
+                                 @Field("section_content") String content,
+                                 @Field("story_id") int story_id);
 
 }
