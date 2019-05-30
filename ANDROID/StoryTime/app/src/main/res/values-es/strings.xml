@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">StoryTime</string>
+    <string name="welcome_text">Bienvenido a StoryTime!</string>
+    <string name="welcome_desc">Inicia sesión para leer y escribit historias</string>
+    <string name="signup_message">Si no tienes una cuenta, puedes registrarte</string>
+    <string name="welcome_register">Regístrate para escribir tus propias historias y compartirlas con la comunidad de StoryTime</string>
+    <string name="welcome_message">Bievenido, </string>
+    <string name="signup_success">¡Felicitaciones! Ahora estás registrado en StoryTime</string>
+    <string name="user_logout">¡Sesión finalizada!</string>
+    <string name="category_header">Categroría</string>
+    <string name="story_author_by">Por: </string>
+    <string name="write_stories">Escribe una historia</string>
+    <string name="add_section">Agregar nueva sección</string>
+
+
+    <!--Bottom Navigation-->
+    <string name="nav_home">Inicio</string>
+    <string name="nav_write">Escribe</string>
+    <string name="nav_profile">Perfil</string>
+
+    <!--EditText hints-->
+    <string name="emailHint">Email</string>
+    <string name="passwordHint">Contraseña</string>
+    <string name="nameHint">Nombre</string>
+    <string name="lastnameHint">Apellido</string>
+    <string name="phoneHint">Número de teléfono (Opcional)</string>
+    <string name="confirmPasswordHint">Confirmar contraseña</string>
+    <string name="story_title">Título</string>
+    <string name="story_description">Una pequeña descripción...</string>
+    <string name="write_section_content">Contenido de la sección...</string>
+
+    <!--Buttons-->
+    <string name="start_write_button">Empieza a escribir</string>
+
+    <!--validations-->
+    <string name="require_email">Email es requerido</string>
+    <string name="invalid_email">Ingrese un email válido</string>
+    <string name="require_password">Contraseña es requerida</string>
+    <string name="require_password_confirmation">Debes confirmar tu contraseña</string>
+    <string name="require_name">Nombre es requerido</string>
+    <string name="require_lastname">Apellido es requerido</string>
+    <string name="phone_length">El número telefónico debe tener al menos 8 dígitos</string>
+    <string name="password_length">La contraseña debe tener al menos 6 caracteres</string>
+    <string name="password_match">La contraseña no coincide</string>
+    <string name="require_title">Título es requerido</string>
+    <string name="require_description">Por favor escriba una breve descripción</string>
+
+
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Senectus et netus et malesuada fames ac. Risus viverra adipiscing at in tellus integer feugiat scelerisque. At imperdiet dui accumsan sit amet nulla facilisi. Amet nisl purus in mollis nunc sed. Lectus mauris ultrices eros in cursus turpis massa tincidunt dui. Nullam eget felis eget nunc lobortis mattis aliquam faucibus. Et malesuada fames ac turpis egestas sed tempus urna et. Placerat duis ultricies lacus sed turpis tincidunt. Amet nisl suscipit adipiscing bibendum est ultricies integer. Aliquet risus feugiat in ante metus dictum at tempor commodo. Augue eget arcu dictum varius. Arcu dictum varius duis at consectetur lorem donec. Ac turpis egestas integer eget aliquet nibh. Vulputate ut pharetra sit amet aliquam id diam. Neque ornare aenean euismod elementum nisi. Non sodales neque sodales ut etiam sit. Ac turpis egestas sed tempus urna et pharetra pharetra. Urna et pharetra pharetra massa massa ultricies. Faucibus et molestie ac feugiat sed lectus.
+
+Lorem ipsum dolor sit amet.</string>
+
+
+</resources>

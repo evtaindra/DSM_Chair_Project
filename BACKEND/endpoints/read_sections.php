@@ -2,8 +2,11 @@
 
 require_once "../db_connection/connection.php";
 
+//Url params
+$story_id = $_GET['story_id'];
+
 //Lista categorias
-$query = 'SELECT * FROM categories';
+$query = 'SELECT * FROM sections where story_id = ' .$story_id;
 
 $sql = $pdo -> prepare($query);
 $sql -> execute();

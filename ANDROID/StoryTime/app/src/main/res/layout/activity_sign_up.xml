@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.SignUpActivity"
+    android:padding="16dp"
+    android:gravity="center">
+    
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:src="@drawable/ic_icon_write"
+            android:layout_gravity="center"
+            android:padding="16dp"
+            android:layout_marginTop="16dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/welcome_register"
+            android:textAlignment="center"
+            style="@style/TextAppearance.MaterialComponents.Subtitle1"
+            android:layout_marginTop="16dp"/>
+
+        <EditText
+            android:id="@+id/signupNameInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:drawableLeft="@drawable/ic_person_24px"
+            android:hint="@string/nameHint"
+            android:drawablePadding="16dp"
+            android:inputType="text"/>
+
+        <EditText
+            android:id="@+id/signupLastnameInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/lastnameHint"
+            android:drawableLeft="@drawable/ic_person_24px"
+            android:drawablePadding="16dp"
+            android:inputType="text"/>
+
+        <EditText
+            android:id="@+id/signupEmailInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:drawableLeft="@drawable/ic_email_24px"
+            android:hint="@string/emailHint"
+            android:drawablePadding="16dp"
+            android:inputType="textEmailAddress"/>
+
+        <EditText
+            android:id="@+id/signupPhoneInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:drawableLeft="@drawable/ic_phone_24px"
+            android:drawablePadding="16dp"
+            android:hint="@string/phoneHint"
+            android:inputType="phone"
+            android:maxLength="8"/>
+
+        <EditText
+            android:id="@+id/signupPasswordInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:drawableLeft="@drawable/ic_lock_24px"
+            android:drawablePadding="16dp"
+            android:hint="@string/passwordHint"
+            android:inputType="textPassword"/>
+
+        <EditText
+            android:id="@+id/signupConfirmPasswordInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:drawableLeft="@drawable/ic_lock_24px"
+            android:drawablePadding="16dp"
+            android:hint="@string/confirmPasswordHint"
+            android:inputType="textPassword"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/AccentButtonStyle"
+            android:text="Sign up"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:onClick="signUp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
